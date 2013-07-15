@@ -7,4 +7,5 @@
   ;; :local-repo "maven-repos"
   :dependencies [[org.clojure/clojure "1.5.1"]
                  [local.oracle/jfxrt "2.2.25"]]
-            :main javafx2.core)
+  :aot [javafx2.core]
+  :main javafx2.core)

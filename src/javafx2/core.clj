@@ -5,15 +5,18 @@
            (javafx.scene.control Button)
            (javafx.scene.layout StackPane)
            (javafx.scene.control TextField)
-           (javafx.stage Stage)))
+           (javafx.stage Stage))
+  )
 
 (gen-class
- :name HelloWorld
+ :name Hello
  :main true
  :extends javafx.application.Application)
 
 (defn -start
   [this ^Stage stage]
+  (println (str "in -start"))
+  (println (str *ns*))
   (let [eh (proxy [EventHandler] []
              (handle [_]
                (println "Hello World")))
@@ -32,5 +35,7 @@
 
 (defn -main
   [& args]
-  (Application/launch (Class/forName "HelloWorld") (into-array String [])))
+(println (str "in -main"))
+(println (str *ns*))
+  (Application/launch (Class/forName "Hello") (into-array String [])))
 
