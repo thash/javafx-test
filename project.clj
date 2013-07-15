@@ -4,7 +4,7 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   ;; :repositories {"local" "/Users/hash/.m2/"}
-  :repositories {"local" ~(str (.toURI (java.io.File. "maven-repo")))}
+  :repositories {"local" ~(str (.toURI (java.io.File. "maven-repos")))}
   :dependencies [[org.clojure/clojure "1.5.1"]
                  [local.oracle/jfxrt "2.2.3"]]
             :main javafx2.core)
