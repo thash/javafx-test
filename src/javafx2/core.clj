@@ -4,6 +4,7 @@
            (javafx.scene Scene)
            (javafx.scene.control Button)
            (javafx.scene.layout StackPane)
+           (javafx.scene.control TextField)
            (javafx.stage Stage)))
 
 (gen-class
@@ -19,8 +20,11 @@
         btn (doto (Button.)
               (.setText "Say 'Hello World'")
               (.setOnAction eh))
+        fromDate (doto (TextField.))
         root (StackPane.)
-        _ (.. root getChildren (add btn))]
+        ;; _ (.. root getChildren (add btn))
+        _ (.. root getChildren (add fromDate))
+        ]
     (doto stage
       (.setTitle "Hello Wrold!")
       (.setScene (Scene. root 300 250))
