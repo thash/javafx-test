@@ -1,13 +1,10 @@
-# javafx2
+## local packages installed via maven
 
-A Clojure library designed to ... well, that part is up to you.
-
-## Usage
-
-FIXME
-
-## License
-
-Copyright © 2013 FIXME
-
-Distributed under the Eclipse Public License, the same as Clojure.
+``````````````````
+$ mvn install:install-file \
+      -DgroupId=local.schudt \
+      -DartifactId=datepicker \
+      -Dversion=0.0.2 \
+      -Dpackaging=jar \
+      -Dfile=/path/to/download/schudt-javafx-datepicker-0.0.2.jar
+``````````````````

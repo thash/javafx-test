@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml">
+  <children>
+    <Label layoutX="69.0" layoutY="65.0" text="from:" />
+    <Label layoutX="87.0" layoutY="96.0" text="to:" />
+    <TextField layoutX="112.0" layoutY="62.0" prefWidth="121.0" />
+    <TextField layoutX="112.0" layoutY="93.0" prefWidth="121.0" />
+    <Label layoutX="340.0" layoutY="33.0" text="Skype ID:" />
+    <TextField layoutX="406.0" layoutY="30.0" prefWidth="121.0" />
+  </children>
+</AnchorPane>

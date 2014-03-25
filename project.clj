@@ -6,6 +6,8 @@
   ;; :repositories {"local" {:url ~(str (.toURI (java.io.File. "maven-repos")))}}
   ;; :local-repo "maven-repos"
   :dependencies [[org.clojure/clojure "1.5.1"]
-                 [local.oracle/jfxrt "2.2.25"]]
-  :aot [javafx2.core]
+                 [local.oracle/jfxrt "2.2.25"]
+                 [local.schudt/datepicker "0.0.2"]]
+  :aot [javafx2.core javafx2.form]
   :main javafx2.core)
+

@@ -1,41 +1,43 @@
 (ns javafx2.core
-  (:import (javafx.application Application)
+  (:require [clojure.java.io :as io])
+  (:import (java.text SimpleDateFormat)
+           (javafx.application Application)
            (javafx.event ActionEvent EventHandler)
+           (javafx.fxml FXMLLoader)
            (javafx.scene Scene)
            (javafx.scene.control Button)
            (javafx.scene.layout StackPane)
            (javafx.scene.control TextField)
-           (javafx.stage Stage))
-  )
+           (javafx.stage Stage)
+           (eu.schudt.javafx.controls.calendar DatePicker)))
 
 (gen-class
  :name Hello
  :main true
+ :prefix "app-"
  :extends javafx.application.Application)
 
-(defn -start
-  [this ^Stage stage]
-  (println (str "in -start"))
-  (println (str *ns*))
-  (let [eh (proxy [EventHandler] []
-             (handle [_]
-               (println "Hello World")))
-        btn (doto (Button.)
-              (.setText "Say 'Hello World'")
-              (.setOnAction eh))
-        fromDate (doto (TextField.))
-        root (StackPane.)
-        ;; _ (.. root getChildren (add btn))
-        _ (.. root getChildren (add fromDate))
-        ]
-    (doto stage
-      (.setTitle "Hello Wrold!")
-      (.setScene (Scene. root 300 250))
-      .show)))
+(defn app-start [this ^Stage stage]
+
+;;  (let [eh (proxy [EventHandler] []
+;;             (handle [_]
+;;               (println "Hello World")))
+;;        btn (doto (Button.)
+;;                  (.setText "Say 'Hello World'")
+;;                  (.setOnAction eh))
+;;        fromDate (doto (DatePicker.)
+;;                       (.setDateFormat (SimpleDateFormat. "yyyy/MM/dd"))
+;;                       (.. getStylesheets (add "css/DatePicker.css"))
+;;                       (.. getCalendarView todayButtonTextProperty (set "Today"))
+;;                       (.. getCalendarView (setShowWeeks false)))]
+
+ (let [pane (-> "../resources/layout.fxml" io/resource FXMLLoader/load)]
+   (doto stage
+     (.setTitle "Hello Wrold!")
+     (.setScene (Scene. pane))
+     .show)))
 
 (defn -main
   [& args]
-(println (str "in -main"))
-(println (str *ns*))
   (Application/launch (Class/forName "Hello") (into-array String [])))
 
